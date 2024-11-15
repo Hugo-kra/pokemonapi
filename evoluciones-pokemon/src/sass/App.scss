@@ -1,0 +1,58 @@
+.app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.buttons-container{
+    width: 300px;
+    display: flex;
+    justify-content: space-between;/*espacio entre botones, flex mirar*/
+    
+}
+.card-container{
+    display: flex;
+    width: 500px;
+    height: 300px;
+    margin-top: 80px;
+    position: relative;
+}
+.card-container .card:nth-child(1){//primer hijo-primera carta
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    transition: 100ms;//esto para que el movimiento de la carta sea mas despacio
+    transform:  rotate(-5deg) translateY(10px) ;//para que la carta se mueva un poco hacìa abajo y se gire la primera para que gire y la segunda para que baje
+    &:hover{
+        transform: rotate(-5deg) translateY(0px);//esto para que la carta haga el movimiento
+
+    }
+}
+.card-container .card:nth-child(2){//segun hijo-segunda carta
+    position: absolute;
+    left: 150px;   
+    z-index: 2;//z index se usa para el posicionamiento de a carta, para que queden sobrepuestas una encima de otra
+    transition: 100ms;
+    &:hover{
+        transform: translateY(-10px);
+
+}
+}
+.card-container .card:nth-child(3){//tercer hijo-tercera carta
+    position: absolute;
+    left: 300px;
+    z-index: 1;
+    transition: 100ms;
+    transform:  rotate(5deg) translateY(10px) ;
+    &:hover{
+        transform: rotate(5deg) translateY(0px);
+}
+}
+.card1{
+    transform: rotate(5.5deg)  translate(140px);//rotate para que gire un poco a la derecha la carta,translate para que la carta se centre en el medio de la pantalla
+
+}
+.card2{
+    transform: rotate(4deg) translate(70px);
+}

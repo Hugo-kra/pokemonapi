@@ -1,0 +1,27 @@
+@use "variables";/*si aqui ponemos as v por ejemplo le damos un nombre a la variable mas corto que seria v y abajo podriamos usar esta v en vez de variables*/
+
+.button{
+    background-color: variables.$color1;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;/*para que se haga redondo*/
+    border: none;
+    cursor: pointer;/*para cuando pasas el raton encima del boton salga la mano*/
+    color: white;
+    font-size: 32px;/*tamaño de letra o en este caso flechas el borde*/
+    &_box{
+        position: relative;/*este esel padre que hay que poner al position absolute para que este no coja de referencia el body sino este que es el padre para esto se ha hecho esta caja verde que no tiene mas (funcionborder: 2px solid green;)*/
+    }
+    &_shadow {
+        width: 60px;
+        height: 60px;
+        background-color: variables.$color2;
+        border-radius: 50%;/*parq que tenga la misma forma del boton*/
+        position: absolute;/* para modificar su posición*/
+        top: 5px;
+        z-index: -1;/*para que la sombra se ponga detras del boton*/
+    }
+    &:active {
+        transform: translateY(4px);/*para que el boton se mueva(accion) cada vez que presionamos active es necesario no ale en html*/
+    }
+}

@@ -1,0 +1,41 @@
+@use "variables";
+
+.card {
+    width: 200px;
+    height: 250px;
+    border-radius: 16px;//redondear
+    background-color: variables.$color2;
+    box-shadow: 3px 3px 10px;// 10px nivel de borrosidad
+    padding: 48px 12px;// 48px desde la parte superior
+    position: relative;//para que position absolute coja referencia la tarjeta para poder mover el nombre arriba a la derecha con los comandos de abajo position top right
+    overflow: hidden;//esto espara hacer que el nombre con la que va de rosa se ajuste a la tarjeta redondeada y no se salga de la misma quede cuadrada con ella
+    cursor: pointer;
+   
+    &_name {
+        background-color: variables.$color1;
+        text-align: center;
+        color: variables.$color6;
+        width: 140px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 6px 12px;
+    }
+
+    &_circle {
+        background-color: variables.$color4;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        position: absolute;
+        top: 56px;
+        left: 24px;
+    }
+    &_imag {
+        position: absolute;
+        z-index: 1;//solo funciona si no hay un position
+        width: 100%;
+    }
+}
+
+
